@@ -1,0 +1,4 @@
+#!/bin/fish
+pdflatex --output-directory=/dev/shm/oo calculo
+cd /dev/shm/oo
+makeindex calculo

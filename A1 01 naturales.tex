@@ -1,0 +1,197 @@
+\input{_begin}
+
+\title{A1, Notas 1: Los números naturales}
+\begin{document}
+\maketitle
+
+
+\section{Axiomas de Peano}
+
+Sea $0$ un número natural y $n\!+\!\!+$ el ``sucesor'' de $n$. Los Axiomas de Peano son:
+
+\begin{enumerate}
+\item $0$ es un número natural.
+
+\item Si $n$ es un número natural, entonces $n\!+\!\!+$ también es un número natural.
+
+\item $0$ no es el sucesor de ningún número natural; es decir, $n\!+\!\!+ \neq 0$ para todo número natural $n$.
+
+\item Diferentes números naturales tienen diferentes sucesores; es decir, si $n, m$ son números naturales y $n \neq m$, entonces $n\!+\!\!+ \neq m\!+\!\!+$.
+
+\item (Principio de Inducción) Dada una propiedad $P(n)$ de un número natural $n$. Suponiendo que $P(0)$ es cierto, y suponiendo que, siempre que $P(n)$ es cierto, $P(n\!+\!\!+)$ también es cierto. Entonces $P(n)$ es cierto para cada número natural $n$.
+\end{enumerate}
+
+
+
+
+\subsection{Uso del Principio de Inducción}
+
+\emph{Afirmación.} Cierta propiedad $P(n)$ es cierta para cada número natural $n$.
+
+\emph{Prueba.} Usando inducción. Primero se verificará el caso base $n = 0$, es decir, probar $P(0)$. (Insertar prueba de $P(0)$ aquí). Luego, suponiendo inductivamente que $n$ es un número natural y $P(n)$ ha sido demostrada. Probar que $P(n\!+\!\!+)$. (Insertar prueba de $P(n\!+\!\!+)$ aquí, asumiendo que $P(n)$ es cierto). Esto cierra la inducción; así $P(n)$ es cierto para todo númerto natural $n$.
+
+
+
+
+\subsection{Adición}
+
+Definición. Dado un número natural $m$. Para sumar cero, se define $0 + m = m$. Suponiendo, inductivamente, que se tiene definido como agregar $n$ a $m$. Entonces para agregar $n\!+\!\!+$  a $m$ se define $(n\!+\!\!+) + m := (n+m)\!+\!\!+$.
+
+\begin{lemma}
+  Para cualquier número natural $n$, $n + 0 = n$.
+\end{lemma}
+
+\begin{proof}
+  Usando inducción. El caso base, $0 + 0 = 0$ se sigue de $0 + m = m$ para todo $m$ y $0$ es un número natural. Suponiendo inductivamente que $n + 0 = n$ se desea mostrar que $(n\!+\!\!+) + 0 = n\!+\!\!+$. Por definición de la adición, $(n\!+\!\!+) + 0 = (n + 0)\!+\!\!+$, que es igual a $n\!+\!\!+$ dado $n + 0 = n$. Lo que cierra la inducción.
+\end{proof}
+
+\begin{lemma}
+  Para cualesquiera números naturales $n$ y  $m$, $n + (m\!+\!\!+) = (n + m)\!+\!\!+$.
+\end{lemma}
+
+\begin{proof}
+  Por inducción sobre $n$ (con $m$ fijo). Para probar el caso base $n = 0$ se necesita mostrar que $0 + (m\!+\!\!+) = (0 + m)\!+\!\!+$. Por la definición de la adición, $0 + (m\!+\!\!+) = m\!+\!\!+$ y $0 + m = 0$; así, ambas partes son $m\!+\!\!+$. Luego, suponiendo inductivamente $n + (m\!+\!\!+) = (n + m)\!+\!\!+$, se necesita probar que $(n\!+\!\!+) + (m\!+\!\!+) = ((n\!+\!\!+) +m)\!+\!\!+$. El lado izquierdo, por definición de la adición es $(n + (m\!+\!\!+))\!+\!\!+$, que es igual a $((n + m)\!+\!\!+)\!+\!\!+$ por la hipótesis de inducción. Por definición de la adición es $(n\!+\!\!+) + m = (n + m)\!+\!\!+$, así el lado derecho es $((n + m)\!+\!\!+)\!+\!\!+$. Así ambos lados son iguales; lo que cierra la inducción.
+\end{proof}
+
+\begin{proposition}[Conmutativa]\label{prop:ad.conmut}
+  Para cualesquiera números naturales $n$ y $m$, $n + m = m + n$.
+\end{proposition}
+
+\begin{proof}
+  Por inducción sobre $n$ ($m$ fijo). El caso base, $n = 0$ , es $0 + m = m + 0$. Por definición de la adición, $0 + m = m$; por el Lema 1, $m + 0 = m$. Así, el caso base es cierto. Luego, suponiendo inductivamente, $n + m = m + n$, se mostrará que $(n\!+\!\!+) + m = m + (n\!+\!\!+)$. Por la definición de la adición, $(n\!+\!\!+) + m = (n + m)\!+\!\!+$. Por el Lema 2, $m + (n\!+\!\!+) = (m + n)\!+\!\!+$, que es igual a $(n + m)\!+\!\!+$ por la hipótesis de induccion $n + m = m + n$. Así, $(n\!+\!\!+) + m = m + (n\!+\!\!+)$ y se cierra la inducción.
+\end{proof}
+
+\begin{proposition}[Asociativa]\label{prop:ad.asoc}
+  Para cualesquiera números naturales $a, b, c$, se tiene $(a + b) + c = a + (b+ c)$.
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{proposition}[Ley de Cancelación]
+  Dado los números naturales $a, b, c$ tal que $a + b = a + c$. Entonces se tiene $b = c$.
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+
+
+
+\subsubsection{Adición y números positivos}
+
+\begin{definition}
+  Un número natural $n$ es positivo si y solo si (sii) no es igual a $0$.
+\end{definition}
+
+\begin{proposition}\label{prop:ad.aposbnat}
+  Si $a$ es un número positivo y $b$ es un número natural, entonces $a + b$ es positivo ($b + a$ también lo es, por la Proposición \ref{prop:ad.conmut}).
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{corollary}
+  Si $a$ y $b$ son números naturales tal que $a + b = 0$, entonces $a = 0$ y $b = 0$.
+\end{corollary}
+
+\begin{proof}
+  Suponiendo por contradicción que $a \neq 0$ o $b \neq 0$. Si $a$ es positivo, $a + b$ es positivo por la Proposición \ref{prop:ad.aposbnat}, una contradicción. De manera similar, si $b$ es positivo, $a + b$ es positivo, una contradicción. Así, ambos, $a$ y $b$, deben ser $0$.
+\end{proof}
+
+\begin{definition}
+  Dado los números naturales $n$ y $m$. $n$ es mayor que o igual a $m$, $n \geq m$ o $m \leq n$, sii $n = m + a$ para algún número natural $a$. Se dice que $n$ es estrictamente mayor que $m$, $n > m$ o $m < n$, sii $n \geq m$ y $n \neq m$.
+\end{definition}
+
+\begin{proposition}[Propiedades básicas del orden]
+  Dado $a, b, c$ números naturales.
+
+  \begin{enumerate}
+  \item Entonces $a \geq a$.
+  \item También, si $a \geq b$ y $b \geq c$, entonces $a \geq c$.
+  \item Si $a \geq b$ y $b \geq a$, entonces $a = b$.
+  \item Se tiene $a \geq b$ si y solo si $a + c \geq b + c$.
+  \item Y, se tiene $a < b$ si y solo si $a\!+\!\!+ \leq b$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+Se puede usar la Proposición 8 para demostrar que $n > m$ si y solo si $n = m + a$ para algún número positivo $a$.
+
+\begin{proposition}[Tricotomía del orden]
+  Dado los número naturales $a$ y $b$. Entonces sola una de las afirmaciones es cierta: $a < b$, $a = b$ o $a > b$.
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+
+
+
+\subsection{Multiplicación}
+
+\begin{definition}
+  $m$ es un número natural. Para multiplicar cero por $m$, se define $0 \times m := 0$. Suponiendo inductivamente que se tiene definido multiplicar $n$ a $m$. Entonces, para multiplcar $n\!+\!\!+$ a $m$, se define $(n\!+\!\!+) \times m := (n \times m) + m$.
+\end{definition}
+
+\begin{lemma}
+  $n \times 0 = 0$.
+\end{lemma}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{lemma}
+  $n \times (m\!+\!\!+) = (n \times m) + n$.
+\end{lemma}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{proposition}
+  $n \times m = m \times n$.
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{proposition}[Ley distributiva]
+  Para cualesquiera número naturales $a, b , c$ se tiene $a(b + c) = ab + ac$ y $(b + c)a = ba+ ca$.
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{proposition}
+  Si $a$ y $b$ son números naturales tal que $a < b$, y $c$ es positivo, entonces $ac < bc$.
+\end{proposition}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{corollary}[Ley de Cancelación]
+  Sean $a, b, c$ números naturales tal que $ac = bc$ y $c$ no es cero. Entonces, $a = b$.
+\end{corollary}
+
+\begin{proof}
+  ...
+\end{proof}
+
+\begin{proposition}[Algoritmo euclídeo]
+  Dado el número natural $n$ y dado el número positivo $q$. Entonces, existen los números naturales $m$ y $r$ tal que $0 \leq r < q$ y $n = mq + r$.
+\end{proposition}
+
+
+\end{document}

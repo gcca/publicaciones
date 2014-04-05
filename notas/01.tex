@@ -1,0 +1,109 @@
+\chapter{Número. Variable. Función} \label{c:numvarfun}
+
+
+\section{Números reales. Representación de números reales por medio de puntos en el eje numérico}
+
+\index{número!irracional}
+\index{número!racional}
+\index{número!real}
+\index{recta real}
+
+Los números enteros y fraccionarios (positivos y negativos), así como el cero, se llaman \emph{números racionales}; se puede expresar como la razón $\frac{p}{q}$ de dos números enteros $p$ y $q$ (ej. $\frac{5}{7}$; $1,25 = \frac{5}{4}$.). Los números racionales pueden representarse por fracciones periódicas finitas o por indefinidas; aquellos que no, se denominan \emph{números irracionales} (ej. $\sqrt{2}$, $\sqrt{3}$, $5 - \sqrt{2}$, etc.). La reunión de números racionales e irracionales se denomina \emph{números reales}. Estos se ordenan según su magnitud, es decir, se cumple solo una relación $x < y$, $x = y$, $x > y$.
+
+Los números reales se pueden expresar por medio de puntos en el \emph{eje númerico}, en el cual están determinados:
+
+\begin{itemize}
+\item un punto $O$ que se denomina origen;
+\item una dirección positiva indicada con una flecha;
+\item una escala para medir longitudes.
+\end{itemize}
+
+En la figura \ref{c:numvarfun:eje}, el número $x_1$ es positivo, representado por el punto $M_1$, situado a la derecha del punto $O$ a una distancia $OM_1 = x_1$. Si $x_2$ es negativo, el punto $M_2$, situado a la izquierda del punto $O$, a una distancia $OM_2 = -x_2$. El punto $O$ representa el número cero.
+
+\begin{figure} \label{c:numvarfun:eje}
+  \centering
+
+  \begin{tikzpicture}
+    \draw      (-3.3 ,0) -- (-2.75,0);
+    \draw      (-2.65,0) -- (- .05,0);
+    \draw      (-2.65,0) -- (- .05,0);
+    \draw      (  .05,0) -- ( 3.95,0);
+    \draw [->] ( 4.05,0) -- ( 6   ,0) node [right]  {$x$};
+
+    \draw (-2.7,0) circle (0.05);
+    \draw (-2.7,0) node [above] {$M_2$};
+
+    \draw (0,0) -- (0,0) circle (0.05);
+    \draw (0,0) node [above] {$O$};
+
+    \draw (4,0) circle (0.05);
+    \draw (4,0) node [above] {$M_1$};
+
+    \foreach \n in {-2,-1,1,2,3}{
+      \draw (\n,-3pt) -- (\n,3pt) node [below=5pt] {$\n$};
+    }
+  \end{tikzpicture}
+
+  \caption{Eje numérico}
+\end{figure}
+
+\begin{theorem}
+  Todo número irracional $\alpha$ se puede expresar con cualquier grado de precisión por medio de números racionales.
+\end{theorem}
+
+
+
+
+\section{Valor absoluto del número real}
+
+\index{valor absoluto}
+
+\begin{definition}
+  Un número real no negativo, que satisface las condiciones:
+  \begin{description}
+  \item $|x| = x$, si $x \ge 0$;
+  \item $|x| = -x$, si $x < 0$.
+  \end{description}
+  se llama valor absoluto (o módulo) de un número real x (notación: $|x|$).
+\end{definition}
+
+De la definición $x \le |x|$.
+
+\begin{proposition}
+  $|x + y| \le |x| + |y|$.
+\end{proposition}
+
+\begin{proof}
+  Si $x + y \ge 0$, entonces: $$|x + y| = x + y \le |x| + |y|$$
+  Si $x + y < 0$, entonces: $$|x + y| = -(x + y) = -(x) + -(y) \le |x| + |y|$$
+\end{proof}
+
+\begin{proposition}
+  $|x - y| \ge |x| - |y|$.
+\end{proposition}
+
+\begin{proof}
+  Suponiendo $x - y = z$, entonces $x = y + z$, luego:
+  $$|x| = |y + z| \le |y| + |z| = |y| + |x - y|$$
+  de donde $|x| - |y| \le |x - y|$.
+\end{proof}
+
+
+
+
+%% \section{Variables y constantes}
+
+%% \section{Rango de una variable}
+
+%% \section{Variables ordenadas. Variables crecientes y decrecientes. %
+%%          Variables acotadas}
+
+%% \section{Función}
+
+%% \section{Maneras de representar funciones}
+
+%% \section{Funciones elementales básicas. Funciones elementales}
+
+%% \section{Funciones algebraicas}
+
+%% \section{Sistema de coordenadas polares}

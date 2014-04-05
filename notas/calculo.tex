@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{book}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\ifdim\overfullrule>0pt % draft option is active
+  \usepackage{environ}
+  \let\tikzpicture\relax
+  \let\endtikzpicture\relax
+  \NewEnviron{tikzpicture}{%
+    \begin{pgfpicture}
+    \pgfpathrectanglecorners{\pgfpointorigin}{\pgfpoint{3cm}{3cm}}%
+     \pgfusepath{stroke}\end{pgfpicture}%
+  }
+\fi
+
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[utf8]{inputenc}
+
+%% \usepackage[hidelinks]{hyperref}
+
+%% \usepackage{float}
+
+%% \usepackage{makeidx}
+%% \usepackage{showidx}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts, amsxtra, yhmath}
+%% \usepackage{amscd}
+%% \usepackage{mathbbol}
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{exercise}[theorem]{Ejercicio}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Nota}
+\newtheorem{notation}[theorem]{Notación}
+
+
+%% \makeindex
+
+
+\begin{document}
+
+\title{CÁLCULO\\ DIFERENCIAL\\ E\\ INTEGRAL}
+\author{\small Cristhian Alberto Gonzales Castillo}
+\date{\vspace{3cm}\includegraphics{logo.png}}
+
+
+\frenchspacing
+\raggedbottom
+
+
+\frontmatter
+
+\maketitle
+\tableofcontents
+%% \listoftables
+%% \listoffigures
+
+\mainmatter
+
+%% \part{I}
+
+\input{./01}
+\input{./02}
+
+%% \part{II}
+
+
+%% \backmatter
+
+%% \printindex
+
+
+\end{document}
